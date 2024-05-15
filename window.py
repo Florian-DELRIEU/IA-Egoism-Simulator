@@ -1,10 +1,12 @@
-import matplotlib.pyplot as plt
+import pygame as pygame
+pygame.init()
 
-def plot_item(item):
-    plt.plot(item.x,item.y,item.color)
+ecran = pygame.display.set_mode((1200, 800))
 
-def generate_window():
-    plt.figure("main window",figsize=(20,10))
-    plt.xlim(-10,10)
-    plt.ylim(-10,10)
-    plt.show()
+continuer = True
+while continuer:
+    for event in pygame.event.get():
+        if event.type == pygame.KEYDOWN:
+            continuer = False
+
+pygame.quit()
